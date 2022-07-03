@@ -7,4 +7,9 @@ node {
      sh 'export DOCKER_ACCT=nananoam123'
      
  }
+ stage('test') {
+     sh 'docker compose build'
+     sh 'docker compose up'
+     
+ }
 }
