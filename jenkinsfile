@@ -1,8 +1,7 @@
 node {
-
-enviorment {
-APP_ENV = "development"
-DOCKER_ACCT = "nananoam123"
+    enviorment {
+        APP_ENV = "development"
+        DOCKER_ACCT = "nananoam123"
 }
     stage('checkout code') {
         checkout([$class: 'GitSCM', branches: [[name: 'develop']], extensions: [], userRemoteConfigs: [[credentialsId: 'github', url: 'git@github.com:nananoam123/CodeWithDanDockerServices.git']]])
