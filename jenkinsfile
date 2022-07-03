@@ -6,12 +6,12 @@ node('centos7'){
  stage('build') {
      sh 'export APP_ENV=development'
      sh 'export DOCKER_ACCT=nananoam123'
-     sh 'docker-compose build'
+     sh 'docker compose build'
  }
  stage('test') {
      sh 'export APP_ENV=development'
      sh 'export DOCKER_ACCT=nananoam123'
-     sh 'docker-compose up -d'
+     sh 'docker compose up -d'
      
  }
 }
