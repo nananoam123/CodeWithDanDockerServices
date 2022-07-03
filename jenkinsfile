@@ -1,15 +1,16 @@
 node {
-    enviorment {
-        APP_ENV = "development"
-        DOCKER_ACCT = "nananoam123"
-}
+
     stage('checkout code') {
         checkout([$class: 'GitSCM', branches: [[name: 'develop']], extensions: [], userRemoteConfigs: [[credentialsId: 'github', url: 'git@github.com:nananoam123/CodeWithDanDockerServices.git']]])
 }
  stage('build') {
+     sh 'export APP_ENV=development'
+     sh 'export DOCKER_ACCT=nananoam123'
      sh 'docker-compose build'
  }
  stage('test') {
+     sh 'export APP_ENV=development'
+     sh 'export DOCKER_ACCT=nananoam123'
      sh 'docker-compose up'
      
  }
